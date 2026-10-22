@@ -54,6 +54,7 @@ const MyPage = () => {
   const [count, setCount] = useState(0);
   const inputRef = useRef(null);
 
+  const doubled = useMemo(() => count * 2, [count]);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -76,7 +77,7 @@ const MyPage = () => {
           <button style={styles.button} onClick={() => setCount(count + 1)}>
             Click {count} times
           </button>
-          <p style={styles.doubled}></p>
+          <p style={styles.doubled}>Doubled: {doubled}</p>
         </div>
       </div>
     </div>
